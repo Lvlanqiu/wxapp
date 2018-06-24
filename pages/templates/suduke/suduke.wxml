@@ -1,0 +1,27 @@
+<!--pages/templates/suduke/suduke.wxml-->
+<!-- <text>pages/templates/suduke/suduke.wxml</text> -->
+<view class="center-text">
+  <text >17suduke</text>
+</view>
+
+<!-- 数字模板 -->
+<view class='my-suduke'>
+  <view class="my-block" wx:for="{{subject}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+    <button bindtap='setitem' data-changeable="{{myindex[index][subindex]==0?true:false}}" data-index="{{index}}" data-subindex="{{subindex}}" data-subitem="{{subitem}}" class="bt-click {{(myindex[index][subindex]!=0)?'my-alpha':''}}" wx:for="{{item}}" wx:for-index="subindex" wx:for-item="subitem" wx:key="{{subindex}}">{{subitem==0?'?':subitem}}</button>
+  </view>
+</view>
+
+<view class="center-text">
+  <text>数字候选区</text>
+</view>
+<view class='my-items'>
+  <button bindtap="btnTap" data-value="{{item}}" class="bt-click {{(selectitem==item)?'my-alpha':''}}" wx:key="{{index}}" wx:for="{{array}}" wx:for-index="index" wx:for-item="item">{{item}}</button>
+</view>
+
+<view class='footer'>
+  <button bindtap='restart'>重来</button>
+  <button bindtap='commit'>交作业</button>
+</view>
+
+<!-- <picker mode='selector' range='{{array}}' value='{{index}}' bindchange='lisenerPickerSelected'>
+</picker> -->

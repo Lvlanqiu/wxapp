@@ -1,0 +1,33 @@
+/* pages/templates/suduke/suduke.wxss */
+.my-items,.my-block{
+  display: flex;
+}
+.bt-click{
+  display: inline-block;
+  text-align: center;
+}
+.center-text{
+  text-align: center;
+}
+.footer{
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+.footer button:first-child{
+  color: #0BABFF;
+  background-color: #ffffff;
+  display: inline-block;
+  width: 50%
+}
+.footer button:last-child{
+  color: #ffffff;
+  background-color: #0BABFF;
+  display: inline-block;
+  width: 50%
+}
+
+.my-alpha{
+  color: #0BABFF;
+}
