@@ -8,7 +8,7 @@ Page({
       title: 'Loading...',
     })
     wx.navigateTo({
-      url: '../templates/suduke/suduke?title=suduke',
+      url: '../templates/suduke/suduke?level='+this.data.level,
       success: function(){
         console.log("page change！");
         wx.hideLoading();
@@ -19,12 +19,29 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    array:[{
+      value:'easy',
+      name: 'easy',
+      checked:true,
+    },{
+      value:'hard',
+      name: 'hard'
+    }],
+    level:'easy',
   },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
+    })
+  },
+  /**
+   * radio监听事件
+   */
+  listenerRadioGroup: function (e) {
+    this.setData({
+      level: e.detail.value,
     })
   },
   onLoad: function () {
